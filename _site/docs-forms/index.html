@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents and Forms - Harris Ranch</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles after Bootstrap -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/basic-template.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon_io/site.webmanifest">
+        <style>
+        /* When the navbar is collapsed (hamburger open), show dropdown menus as a flat list
+             instead of requiring the inner dropdown to be toggled. This keeps desktop dropdown
+             behavior intact while making the mobile hamburger reveal the submenu items directly. */
+            @media (max-width: 991.98px) {
+                /* Target the Bootstrap collapse when it has been opened (gets the .show class)
+                     or when we add a JS-managed helper class `mobile-flat`. This covers cases where
+                     the collapse state isn't reflected by `.show` due to custom scripts or markup. */
+                #mainNavbar.show .nav-item.dropdown > .dropdown-menu,
+                #mainNavbar.mobile-flat .nav-item.dropdown > .dropdown-menu {
+                display: block !important;
+                position: static !important;
+                float: none !important;
+                background: transparent !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* Make each dropdown item look like a normal nav item in the stacked menu */
+            #mainNavbar.show .nav-item.dropdown .dropdown-menu .dropdown-item {
+                padding: .5rem 1rem !important;
+            }
+
+            /* Remove the dropdown caret on the parent link when collapsed */
+            #mainNavbar .nav-link.dropdown-toggle::after {
+                display: none;
+            }
+        }
+        </style>
+            <script>
+            // Ensure mobile flat class is added when Bootstrap collapse opens — covers cases
+            // where .show might not be present or when other scripts interfere.
+            document.addEventListener('DOMContentLoaded', function () {
+                var mainNavbar = document.getElementById('mainNavbar');
+                if (!mainNavbar) return;
+
+                // Listen for Bootstrap collapse events (fired by the bundle)
+                mainNavbar.addEventListener('shown.bs.collapse', function () {
+                    mainNavbar.classList.add('mobile-flat');
+                });
+                mainNavbar.addEventListener('hidden.bs.collapse', function () {
+                    mainNavbar.classList.remove('mobile-flat');
+                });
+
+                // Fallback: if someone toggles via aria-expanded on the button, mirror that.
+                var toggler = document.querySelector('[data-bs-target="#mainNavbar"]');
+                if (toggler) {
+                    toggler.addEventListener('click', function () {
+                        // small timeout to let Bootstrap update state
+                        setTimeout(function () {
+                            if (mainNavbar.classList.contains('show')) {
+                                mainNavbar.classList.add('mobile-flat');
+                            } else {
+                                mainNavbar.classList.remove('mobile-flat');
+                            }
+                        }, 10);
+                    });
+                }
+            });
+            </script>
+   
+</head>
+<body>
+    <header class="py-3 bg-white">
+        <div class="container px-0">
+            <nav class="navbar navbar-expand-lg w-100">
+                <div class="container-fluid d-flex align-items-center">
+                    <div class="logo me-3 ps-2 ps-md-3 logo">
+                    <a class="nav-link" href="/index"> <img src="/images/logo.png" alt="Harris Ranch Logo" height="70"></a>
+                    </div>
+                    <button class="navbar-toggler ms-auto pe-2 pe-md-3 me-2 me-md-4" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+                        <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
+                            
+                            <!-- Desktop: keep the dropdown for large screens -->
+                            <li class="nav-item dropdown d-none d-lg-block">
+                                <a class="nav-link dropdown-toggle" href="#" id="communitiesDropdown" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Main
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="communitiesDropdown">
+                                    <li><a class="dropdown-item" href="/index/">Harris Ranch Master</a></li>
+                                    <li><a class="dropdown-item" href="/barber-junction/">Barber Junction</a></li>
+                                    <li><a class="dropdown-item" href="/boulevard-at-harris-ranch/">The Boulevard at Harris Ranch</a></li>
+                                    <li><a class="dropdown-item" href="/south-townhomes/">South Townhomes</a></li>
+
+                                    <li><a class="dropdown-item" href="/subdivision-no-1/">Subdivision No 1</a></li>
+                                    <li><a class="dropdown-item" href="/timber-square/">Timber Square</a></li>
+                                    <li><a class="dropdown-item" href="https://www.cityofboise.org/departments/city-clerk/harris-ranch-cid/"
+                                            target="_blank">Harris Ranch CID</a></li>
+                                    <li><a class="dropdown-item" href="https://bvnaboise.org/" target="_blank">Barber Valley N.A.</a></li>
+                                    <li><a class="dropdown-item" href="https://www.sentrymgt.com/" target="_blank">Sentry Management</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Mobile: show the submenu items as top-level nav items (no 'Main' parent) -->
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="/index/">Harris Ranch Master</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="/barber-junction/">Barber Junction</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="/boulevard-at-harris-ranch/">The Boulevard at Harris Ranch</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="/subdivision-no-1/">Subdivision No 1</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="/timber-square/">Timber Square</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="https://www.cityofboise.org/departments/city-clerk/harris-ranch-cid/" target="_blank">Harris Ranch CID</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="/south-townhomes/">South Townhomes</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="https://bvnaboise.org/" target="_blank">Barber Valley N.A.</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="https://www.sentrymgt.com/" target="_blank">Sentry Management</a></li>
+                          
+                            <li class="nav-item">
+                                <a class="nav-link" href="mailto:boise@sentrymgt.com">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+                
+            </div>
+        </div>
+    </header>
+
+    <div class="page-title brand-brown">
+        <div class="container px-0">
+            <div class="site-inner">
+            <div class="text-center">
+                <h1 class="d-md-block">Welcome to Harris Ranch</h1>
+                
+                <h2 class="fs-4 fs-md-3">Documents and Forms</h2>
+                
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container px-0">
+            <div class="site-inner">
+                
+ <div class="row">
+    <p><a href = "/assets/files/2019_Pool_Rules_Reg_for_Community_Center.pdf">Pool Rules and Community Regulations/Guidelines</a></p>
+    <p><a href = "https://www.cityofboise.org/departments/planning-and-development-services/planning/zoning/zoning-districts/specific-plan-districts/harris-ranch-specific-plan-district/" target="_blank">Harris Ranch Specific Plan</a></p>
+    <p><a href = "/assets/files/HarrisRanchSingleFamilyDetachedResidentialDesignGuidelinesOctober2025.pdf">Harris Ranch Master Design Guidelines</a></p>
+    <p><a href = "/assets/files/HarrisRanchMasterCCRs.pdf">Harris Ranch Master Covenants, Conditions and Restrictions (CC&Rs)</a></p>
+    <p><a href = "/assets/files/Amendment-2-Harris-Ranch-Master.pdf">Harris Ranch Master Amendment 2 - Covenants, Conditions and Restrictions (CC&Rs)</a></p>
+    <p><a href = "/assets/files/Amendment-3-Harris-Ranch-Master.pdf">Harris Ranch Master Amendment 3 - Covenants, Conditions
+                and Restrictions (CC&Rs)</a></p>
+
+</div>
+
+<hr class="my-5">
+<section class="description">
+<div class="row">
+    <div class="col-lg-6 col-md-6"><p><strong>Harris Ranch</strong> is a unique, "mixed-use" planned community and the first of its kind within the City of Boise. One of the
+    community's distinguishing attributes is the property rights, protections, and restrictions established by the CC&Rs.
+    The CC&Rs are intended to protect, enhance, and preserve the value, amenities, desirability, and attractiveness of the
+    property. They ultimately provide for an integrated neighborhood and a consistently maintained high-quality standard of
+    living.</p>
+
+    <p>The Harris Ranch Master Declaration of Covenants, Conditions, and Restrictions (CC&Rs) and the Harris Ranch Supplemental
+    CC&Rs are the documents that state the covenants between the homeowner/ resident and the Harris Ranch Homeowners
+    Association. The CC&Rs outline the expectations of our neighborhood and are designed to help maintain our property
+    values and our quality of life.</p>
+    </div>
+
+    <div class="col-lg-6 col-md-6 text-center">
+        <!-- Responsive image: will scale with column width -->
+        <img src="/images/page2.jpg" alt="Harris Ranch Documents" class="img-fluid img-bootstrap-border">
+    </div>
+</div>
+  
+</section>
+<hr class="my-5">
+<section class="ccrs">
+    <div class="row">
+    <h3 class="fs-4 fs-md-3">Covenants, Conditions and Restrictions (CC&Rs)</h3>
+        <p>While much of the CC&Rs language is legal in nature and not encountered every day, several standards are commonly relevant. A few key items are highlighted below for your convenience:</p>
+
+
+        <ul class="list ccr-list">
+            <li>
+                <strong>Improvements (Master Declaration Article 4.3)</strong>
+                <div>All improvements, additions, or alterations to the Property must adhere to the Harris Ranch Design Guidelines and be approved by the Harris Ranch Review Board. Architectural Control Committee (ACC) Request Project Forms may be obtained from the Management Company or downloaded from this website.</div>
+            </li>
+            <li>
+                <strong>Nuisances (Master Declaration Article 4.4)</strong>
+                <div>No rubbish or debris may accumulate on the Property. Odors, fumes, and dust that would be considered a hindrance to adjoining Properties are not permitted.</div>
+            </li>
+            <li>
+                <strong>Signs (Master Declaration Article 4.8)</strong>
+                <div>No signs of any kind shall be displayed on or from any portion of the Property unless the signage complies with the provisions of the Harris Ranch Specific Plan Code.</div>
+            </li>
+            <li>
+                <strong>Vehicles & Trailers (Master Declaration Article 4.16)</strong>
+                <div>Camp trailers, boats, horse trailers, utility trailers, and the like may only be stored in garages. Parking of inoperable vehicles or vehicles under repair is not permitted.</div>
+            </li>
+            <li>
+                <strong>Animals/Pets (Master Declaration Article 4.17)</strong>
+                <div>Only domestic pets are allowed, limited to 5 in total with no more than three of any one species.</div>
+            </li>
+            <li>
+                <strong>Landscaping (Master Declaration Article 4.23)</strong>
+                <div>Landscaping improvements must adhere to the Architectural and Landscape Design Guidelines and be approved by the Harris Ranch Review Board prior to installation.</div>
+            </li>
+            <li>
+                <strong>Leasing (Subdivision No. 1 Supplement Article 4.10)</strong>
+                <div>The owner of a unit may lease the unit for no more than a cumulative total of 60 months.</div>
+            </li>
+        </ul>
+
+        <p>Again, the above-referenced items represent only a few commonly encountered subjects set forth in the CC&Rs, and you are encouraged to familiarize yourself with the full text of the documents which can be downloaded by clicking on the link above.</p>
+
+    </div>
+
+</section>
+<hr class="my-5">
+<section class="assessments">
+    <div class="row"> 
+        <h3 class="fs-4 fs-md-3">HOA Assessments and Collection Policy</h3>
+        <p>The Harris Ranch Subdivision No. 1 (aka Dallas Harris Estates) Board of Directors has established a policy for
+        collection of late assessment payments. This policy is not intended to punish homeowners, but to be fair to all
+        homeowners who pay their dues on time. If late dues are allowed to accrue, homeowners who pay on time and in good faith
+        are forced to subsidize those who do not pay.</p>
+        <p>When dues are not paid in a timely manner, the Association as a whole suffers financially. Either dues would have to be
+        raised or reserves would dwindle. No owner may, for any reason, exempt himself/herself from liability for such dues. The
+        quarterly homeowner’s association dues must be paid as indicated and on time.</p>
+        <p><a href = "/assets/files/2017_HR_Sub_1_signed_collections_policy.pdf">Collections Policy</a></p>
+    </div>
+
+</section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="brand-brown py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-md-start">
+                    <p class="mb-0">&copy; 2025 Harris Ranch. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Site by <a href="https://www.cascadeconsultingllc.com/" target="_blank">Cascade Consulting LLC</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

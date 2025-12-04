@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page - Harris Ranch</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles after Bootstrap -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/basic-template.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon_io/site.webmanifest">
+        <style>
+        /* When the navbar is collapsed (hamburger open), show dropdown menus as a flat list
+             instead of requiring the inner dropdown to be toggled. This keeps desktop dropdown
+             behavior intact while making the mobile hamburger reveal the submenu items directly. */
+            @media (max-width: 991.98px) {
+                /* Target the Bootstrap collapse when it has been opened (gets the .show class)
+                     or when we add a JS-managed helper class `mobile-flat`. This covers cases where
+                     the collapse state isn't reflected by `.show` due to custom scripts or markup. */
+                #mainNavbar.show .nav-item.dropdown > .dropdown-menu,
+                #mainNavbar.mobile-flat .nav-item.dropdown > .dropdown-menu {
+                display: block !important;
+                position: static !important;
+                float: none !important;
+                background: transparent !important;
+                box-shadow: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+
+            /* Make each dropdown item look like a normal nav item in the stacked menu */
+            #mainNavbar.show .nav-item.dropdown .dropdown-menu .dropdown-item {
+                padding: .5rem 1rem !important;
+            }
+
+            /* Remove the dropdown caret on the parent link when collapsed */
+            #mainNavbar .nav-link.dropdown-toggle::after {
+                display: none;
+            }
+        }
+        </style>
+            <script>
+            // Ensure mobile flat class is added when Bootstrap collapse opens — covers cases
+            // where .show might not be present or when other scripts interfere.
+            document.addEventListener('DOMContentLoaded', function () {
+                var mainNavbar = document.getElementById('mainNavbar');
+                if (!mainNavbar) return;
+
+                // Listen for Bootstrap collapse events (fired by the bundle)
+                mainNavbar.addEventListener('shown.bs.collapse', function () {
+                    mainNavbar.classList.add('mobile-flat');
+                });
+                mainNavbar.addEventListener('hidden.bs.collapse', function () {
+                    mainNavbar.classList.remove('mobile-flat');
+                });
+
+                // Fallback: if someone toggles via aria-expanded on the button, mirror that.
+                var toggler = document.querySelector('[data-bs-target="#mainNavbar"]');
+                if (toggler) {
+                    toggler.addEventListener('click', function () {
+                        // small timeout to let Bootstrap update state
+                        setTimeout(function () {
+                            if (mainNavbar.classList.contains('show')) {
+                                mainNavbar.classList.add('mobile-flat');
+                            } else {
+                                mainNavbar.classList.remove('mobile-flat');
+                            }
+                        }, 10);
+                    });
+                }
+            });
+            </script>
+   
+</head>
+<body>
+    <header class="py-3 bg-white">
+        <div class="container px-0">
+            <nav class="navbar navbar-expand-lg w-100">
+                <div class="container-fluid d-flex align-items-center">
+                    <div class="logo me-3 ps-2 ps-md-3 logo">
+                    <a class="nav-link" href="/index"> <img src="/images/logo.png" alt="Harris Ranch Logo" height="70"></a>
+                    </div>
+                    <button class="navbar-toggler ms-auto pe-2 pe-md-3 me-2 me-md-4" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+                        <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
+                            
+                            <!-- Desktop: keep the dropdown for large screens -->
+                            <li class="nav-item dropdown d-none d-lg-block">
+                                <a class="nav-link dropdown-toggle" href="#" id="communitiesDropdown" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Main
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="communitiesDropdown">
+                                    <li><a class="dropdown-item" href="/index/">Harris Ranch Master</a></li>
+                                    <li><a class="dropdown-item" href="/barber-junction/">Barber Junction</a></li>
+                                    <li><a class="dropdown-item" href="/boulevard-at-harris-ranch/">The Boulevard at Harris Ranch</a></li>
+                                    <li><a class="dropdown-item" href="/south-townhomes/">South Townhomes</a></li>
+
+                                    <li><a class="dropdown-item" href="/subdivision-no-1/">Subdivision No 1</a></li>
+                                    <li><a class="dropdown-item" href="/timber-square/">Timber Square</a></li>
+                                    <li><a class="dropdown-item" href="https://www.cityofboise.org/departments/city-clerk/harris-ranch-cid/"
+                                            target="_blank">Harris Ranch CID</a></li>
+                                    <li><a class="dropdown-item" href="https://bvnaboise.org/" target="_blank">Barber Valley N.A.</a></li>
+                                    <li><a class="dropdown-item" href="https://www.sentrymgt.com/" target="_blank">Sentry Management</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Mobile: show the submenu items as top-level nav items (no 'Main' parent) -->
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="/index/">Harris Ranch Master</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="/barber-junction/">Barber Junction</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="/boulevard-at-harris-ranch/">The Boulevard at Harris Ranch</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="/subdivision-no-1/">Subdivision No 1</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="/timber-square/">Timber Square</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="https://www.cityofboise.org/departments/city-clerk/harris-ranch-cid/" target="_blank">Harris Ranch CID</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="/south-townhomes/">South Townhomes</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="https://bvnaboise.org/" target="_blank">Barber Valley N.A.</a></li>
+                            <li class="nav-item d-lg-none"><a class="nav-link" href="https://www.sentrymgt.com/" target="_blank">Sentry Management</a></li>
+                          
+                            <li class="nav-item">
+                                <a class="nav-link" href="mailto:boise@sentrymgt.com">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+                
+            </div>
+        </div>
+    </header>
+
+    <div class="page-title brand-brown">
+        <div class="container px-0">
+            <div class="site-inner">
+            <div class="text-center">
+                <h1 class="d-md-block">Welcome to Harris Ranch</h1>
+                
+                <h2 class="fs-4 fs-md-3">Documents and Forms</h2>
+                
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container px-0">
+            <div class="site-inner">
+                
+<div class="row">
+    <div class="col-md-8">
+        <h2>About Our Community</h2>
+        <p class="lead">
+            Experience the perfect blend of modern living and natural beauty in our carefully planned community.
+        </p>
+        <p>
+            Harris Ranch offers a unique living experience with access to premium amenities, beautiful landscapes, and a strong sense of community.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Quick Links</h3>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-decoration-none">Community Events</a></li>
+                    <li><a href="#" class="text-decoration-none">Resident Portal</a></li>
+                    <li><a href="#" class="text-decoration-none">HOA Documents</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="my-5">
+<section class="demo-alignments">
+    <h3>Flex alignment demo</h3>
+    <p class="text-muted">Each row below is a flex container with different <code>align-items</code> values. Notice how the shorter green box aligns relative to the taller blue box.</p>
+
+    <div class="mb-4">
+        <div class="d-flex align-items-start border" style="height:100px;">
+            <div class="bg-primary text-white p-3" style="width:120px;">Tall box</div>
+            <div class="bg-success text-white p-2 ms-3 align-self-center" style="height:40px;width:120px;">Smaller box</div>
+            <div class="ms-auto p-2">align-items: start</div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <div class="d-flex align-items-center border" style="height:100px;">
+            <div class="bg-primary text-white p-3" style="width:120px;">Tall box</div>
+            <div class="bg-success text-white p-2 ms-3" style="height:40px;width:120px;">Smaller box</div>
+            <div class="ms-auto p-2">align-items: center</div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        <div class="d-flex align-items-end border" style="height:100px;">
+            <div class="bg-primary text-white p-3" style="width:120px;">Tall box</div>
+            <div class="bg-success text-white p-2 ms-3" style="height:40px;width:120px;">Smaller box</div>
+            <div class="ms-auto p-2">align-items: end</div>
+        </div>
+    </div>
+</section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="brand-brown py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-md-start">
+                    <p class="mb-0">&copy; 2025 Harris Ranch. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Site by <a href="https://www.cascadeconsultingllc.com/" target="_blank">Cascade Consulting LLC</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

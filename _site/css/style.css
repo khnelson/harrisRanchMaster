@@ -1,0 +1,496 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fluid root font-size so rem units become partially responsive.
+   - min: 14px, preferred scales with viewport, max: 18px
+   Adjust these values if you want a different scale range. This keeps
+   accessibility intact (users who change default font-size still win).
+*/
+html {
+    font-size: clamp(14px, 1.2vw, 18px);
+}
+
+body {
+    font-family:Verdana, Geneva, Tahoma, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header and Navigation */
+.header-logo-row {
+    position: relative;
+    padding: 0.5rem 0;
+}
+.header-logo-row .main-logo {
+    max-height: 84px;
+}
+.
+}
+@media (max-width: 420px) {
+    .header-nav-container .navbar-collapse {
+        right: 0;
+        left: 0;
+        min-width: auto;
+        width: calc(100% - 1rem);
+        margin: 0 0.5rem;
+    }
+}
+
+nav {
+    max-width: 1600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+a {
+    color: #43864a;
+}
+A:hover {
+    color: #2c5530;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.brand-brown {
+    background-color: #36342D;
+    color: white;
+}
+
+.page-title {
+    padding: 2.5rem 0;
+    text-transform: uppercase;
+}
+
+.page-title h1 {
+    /* responsive heading: scales between 1.25rem and 2.5rem depending on viewport */
+    font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+    margin-bottom: 0.5rem;
+    letter-spacing: .09em;
+    text-align: center;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 60vh;
+}
+
+/* Homepage Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f4f4f4;
+    margin: -2rem -2rem 2rem -2rem;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c5530;
+    
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #2c5530;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background: #1f3d21;
+}
+
+/* Features Section */
+.features {
+    margin-top: 3rem;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature {
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.feature h3 {
+    color: #2c5530;
+    margin-bottom: 0.5rem;
+}
+h3 {
+    color: #2c5530;
+    
+}
+
+/* Standard Page Layout */
+.page-header {
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 2px solid #2c5530;
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: #2c5530;
+}
+
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-content h2 {
+    color: #2c5530;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.page-content h3 {
+    color: #2c5530;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-content p {
+    margin-bottom: 1rem;
+}
+.large-centered-text {
+    
+    margin: 0 auto;
+    text-align: center;
+    font-size:1.3rem;
+    font-weight: 400;
+}
+.about, .info{
+    margin:10px 50px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+footer a{
+    color:#fff
+}
+footer a:hover {
+    color: #a3a3a3
+}
+.home-panel .btn {
+    /* Make the footer buttons the same fixed width and center them
+       - fixed on wider screens so labels don't change widths
+       - max-width:100% keeps them from overflowing small columns
+    */
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    margin: 0.5rem auto;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    /* On small screens let buttons expand to the column width */
+    .home-panel .btn {
+        width: 100%;
+    }
+}
+/* Make the buttons inside the footer panels the same width as well.
+   The site uses .footer-panel for those three panels in the homepage.
+   Keep behavior identical to .home-panel: fixed width on wide screens,
+   full-width on small screens. Scoped so other .btn usages aren't affected. */
+.footer-panel .btn {
+    display: block;
+    width: 220px;
+    max-width: 100%;
+    margin: 0.5rem auto;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-panel .btn { width: 100%; }
+}
+.footer-links a{
+    text-decoration: none;
+    font-size: 1.2rem
+}
+.footer-links {
+    display: flex;
+    gap: 4em; /* requested 4em gap between panels */
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 0.5rem 0;
+}
+
+.footer-links > .col-md-4 {
+    /* three columns with gaps accounted for; falls back to natural width if CSS calc unsupported */
+    flex: 0 0 calc((100% - 8em) / 3);
+    max-width: calc((100% - 8em) / 3);
+    box-sizing: border-box;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .footer-links { gap: 1.5rem; }
+    .footer-links > .col-md-4 { flex: 0 0 100%; max-width: 100%; }
+}
+.main-content {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0;
+}
+.home-hero-image {
+    background-image: url('/images/HarrisRanchHome.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width:101%
+    
+}
+.home-hero-text {
+    background-color: #fff;
+    margin:0;
+    font-size: 1.1rem; /* more reasonable default */
+    width: 100%;
+    display: block;
+    text-align: center; /* center the text */
+    box-sizing: border-box;
+    color: #333
+}
+.home-hero-text h1{
+    font-size: 2.75rem;
+    letter-spacing: 0.1em;
+    font-weight: 580;
+}
+.hr-description p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+.hr-description h2 {
+    font-size: 1.7rem;
+    font-weight:600
+}
+/* Section-equal: let an image column define section height (applied on pages using style.css)
+   This mirrors the rules previously added to basic-template.css but scoped into style.css
+*/
+.section-equal .row { align-items: stretch; }
+.section-equal .col-img { display: block; }
+
+/* When using a background image on the column, make it cover the area
+   and add a subtle overlay so foreground text is readable. */
+.section-equal .col-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white; /* default text color for overlay */
+    padding: 0; /* give content some breathing room */
+    height:700px;
+    --bs-gutter-x: 0rem;
+}
+.section-equal .col-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.28); /* subtle dark overlay */
+    z-index: 0;
+}
+.section-equal .col-img > * { position: relative; z-index: 1; }
+/* Position the hero text about 3/4 down when it's inside a .col-img background column */
+.section-equal .col-img > .home-hero-text {
+    position: absolute;
+    left: 50%;
+    top: 70%; /* ~3/4 down the container */
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 2; /* sit above the overlay */
+    padding: .5rem; /* ensure padding when positioned */
+}
+.btn-primary {
+    background-color: #2c5530;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+a.btn-primary {
+    background-color:#2c5530;
+}
+a.btn-primary:hover {
+    background-color: #609866;
+}
+
+    /* Fallback layout: ensure the inner icon columns line up even if Bootstrap isn't loaded
+       Use a simple flex grid so four items sit side-by-side on wider screens and two-per-row on small screens */
+    .section-equal .col-img > .home-hero-text {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-equal .col-img > .home-hero-text > div {
+        box-sizing: border-box;
+        flex: 0 0 25%;
+        max-width: 25%;
+        padding: 0.25rem 0.5rem;
+        text-align: center;
+    }
+    @media (max-width: 768px) {
+        .section-equal .col-img > .home-hero-text > div {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        /* On small screens, let the hero-text flow in document (avoid overlapping the image) */
+        .section-equal .col-img > .home-hero-text {
+            position: static;
+            transform: none;
+            width: 100%;
+            max-width: none;
+            padding: 1rem 0.5rem;
+        }
+    }
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+    .main-content {
+        padding: 0 1rem;
+    }
+}
+@media (max-width: 500px) {
+    .home-hero-text h1{
+        font-size: 2rem;
+    }
+    .page-title h1{
+        font-size:18px !important;
+    }
+    .page-title {
+        padding: 1rem 0!important;
+        
+    }
+    .large-centered-text {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+}
+
+/* Ensure the navbar hamburger is visible on all screen sizes and provide
+   a CSS fallback icon in case Bootstrap's default SVG icon isn't loaded. */
+.navbar-toggler {
+    
+    border: none;
+    background: transparent;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    color: #2c5530; /* icon color via currentColor */
+    z-index: 2000; /* sit above other header content */
+}
+
+.navbar-toggler-icon {
+    /* Simple 3-line hamburger using pseudo-elements */
+    display: inline-block;
+    width: 28px;
+    height: 2px;
+    background-color: currentColor;
+    position: relative;
+    vertical-align: middle;
+}
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 28px;
+    height: 2px;
+    background-color: currentColor;
+}
+.navbar-toggler-icon::before { top: -8px; }
+.navbar-toggler-icon::after { top: 8px; }
+
+/* If the toggler sits on a darker background (brand-brown), invert color for contrast */
+.brand-brown .navbar-toggler { color: #fff; }
+
+/* Anchor absolute-positioned toggler inside the heading so `right:0` works
+    relative to the heading container (used in `src/index.html`). */
+.heading { position: relative; }
+
